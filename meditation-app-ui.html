@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            color: white;
+        }
+        .container {
+            max-width: 414px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f39c12;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .settings-icon {
+            font-size: 24px;
+        }
+        .greeting {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .mood-query {
+            background-color: #34495e;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .card {
+            flex: 0 0 auto;
+            width: 150px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-subtitle {
+            font-size: 12px;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #34495e;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 414px;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">J</div>
+            <div class="settings-icon">⚙️</div>
+        </div>
+        <div class="greeting">Good afternoon, Jessica</div>
+        <div class="mood-query">
+            😌 How are you feeling?
+        </div>
+        <div class="section-title">Recently played</div>
+        <div class="card-container">
+            <div class="card" style="background-image: url('https://via.placeholder.com/150x100');">
+                <div class="card-title">Daily calm</div>
+                <div class="card-subtitle">10 min</div>
+            </div>
+            <div class="card" style="background-image: url('https://via.placeholder.com/150x100');">
+                <div class="card-title">Stay happy</div>
+                <div class="card-subtitle">10 min</div>
+            </div>
+        </div>
+        <div class="section-title">Your favorites</div>
+        <div class="card-container">
+            <div class="card" style="background-image: url('https://via.placeholder.com/150x100');">
+                <div class="card-title">Train your mind</div>
+                <div class="card-subtitle">Meditation • 10 min</div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-item">🏠</div>
+        <div class="nav-item">🌙</div>
+        <div class="nav-item">🍃</div>
+        <div class="nav-item">🎵</div>
+    </div>
+</body>
+</html>
