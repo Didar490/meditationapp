@@ -95,7 +95,7 @@
             background-color: #2a2e75;
             border-radius: 16px;
             padding: 12px;
-            text-align: center;
+            text-align: left; /* Changed from center to left */
         }
 
         .recently-played-cards .card img {
@@ -105,8 +105,15 @@
         }
 
         .recently-played-cards .card p {
-            font-size: 16px;
-            margin: 0;
+            font-size: 18px; /* Increased from 16px */
+            font-weight: bold; /* Added bold */
+            margin: 0 0 4px 0; /* Adjusted margin */
+        }
+
+        .recently-played-cards .card span {
+            font-size: 14px;
+            color: #a0a0a0;
+            display: block; /* Ensures it's on a new line */
         }
 
         /* Favorites Section */
@@ -222,7 +229,7 @@
             <div class="recently-played-cards">
                 <div class="card">
                     <img src="assets/relax.jpg" alt="Daily Calm">
-                    <p>Daily calm</p>
+                    <p>Daily Calm</p>
                     <span>10 min</span>
                 </div>
                 <div class="card">
