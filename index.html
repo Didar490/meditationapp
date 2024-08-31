@@ -1,55 +1,236 @@
-<div class="container">
-    <header class="header">
-        <div class="profile-pic"></div>
-        <div class="settings-icon"></div>
-    </header>
-    
-    <section class="greeting-section">
-        <p>Good afternoon,</p>
-        <h1>Jessica</h1>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile UI</title>
+    <style>
+        /* Basic Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0b43;
+            color: white;
+        }
 
-    <section class="feeling-section">
-        <div class="feeling-card">
-            <span class="emoji">😊</span>
-            <p>How are you feeling?</p>
-        </div>
-    </section>
+        /* Container */
+        .container {
+            max-width: 393px;
+            margin: 0 auto;
+            padding: 16px;
+        }
 
-    <section class="recently-played-section">
-        <h2>Recently played</h2>
-        <div class="recently-played-cards">
-            <div class="card">
-                <img src="path-to-daily-calm-image.jpg" alt="Daily Calm">
-                <p>Daily calm</p>
-                <span>10 min</span>
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            background-image: url('path-to-profile-pic.jpg');
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        .settings-icon {
+            width: 24px;
+            height: 24px;
+            background-image: url('path-to-settings-icon.svg');
+            background-size: cover;
+        }
+
+        /* Greeting Section */
+        .greeting-section p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .greeting-section h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Feeling Section */
+        .feeling-section {
+            margin-top: 20px;
+        }
+
+        .feeling-card {
+            display: flex;
+            align-items: center;
+            background-color: #2a2e75;
+            border-radius: 20px;
+            padding: 16px;
+        }
+
+        .feeling-card .emoji {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        /* Recently Played Section */
+        .recently-played-section {
+            margin-top: 24px;
+        }
+
+        .recently-played-section h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .recently-played-cards {
+            display: flex;
+            gap: 16px;
+            overflow-x: scroll;
+        }
+
+        .recently-played-cards .card {
+            width: 150px;
+            background-color: #2a2e75;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .recently-played-cards .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .recently-played-cards .card p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Favorites Section */
+        .favorites-section {
+            margin-top: 24px;
+        }
+
+        .favorites-section h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+            background-image: url('path-to-search-icon.svg');
+            background-size: cover;
+            float: right;
+        }
+
+        .favorites-cards {
+            display: flex;
+            gap: 16px;
+            overflow-x: scroll;
+        }
+
+        .favorites-cards .card {
+            width: 150px;
+            background-color: #2a2e75;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #2a2e75;
+            padding: 12px 0;
+            border-radius: 30px 30px 0 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            background-size: cover;
+        }
+
+        .nav-icon.home {
+            background-image: url('path-to-home-icon.svg');
+        }
+
+        .nav-icon.sleep {
+            background-image: url('path-to-sleep-icon.svg');
+        }
+
+        .nav-icon.meditation {
+            background-image: url('path-to-meditation-icon.svg');
+        }
+
+        .nav-icon.music {
+            background-image: url('path-to-music-icon.svg');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-pic"></div>
+            <div class="settings-icon"></div>
+        </header>
+        
+        <section class="greeting-section">
+            <p>Good afternoon,</p>
+            <h1>Jessica</h1>
+        </section>
+
+        <section class="feeling-section">
+            <div class="feeling-card">
+                <span class="emoji">😊</span>
+                <p>How are you feeling?</p>
             </div>
-            <div class="card">
-                <img src="path-to-stay-happy-image.jpg" alt="Stay Happy">
-                <p>Stay happy</p>
-                <span>10 min</span>
+        </section>
+
+        <section class="recently-played-section">
+            <h2>Recently played</h2>
+            <div class="recently-played-cards">
+                <div class="card">
+                    <img src="path-to-daily-calm-image.jpg" alt="Daily Calm">
+                    <p>Daily calm</p>
+                    <span>10 min</span>
+                </div>
+                <div class="card">
+                    <img src="path-to-stay-happy-image.jpg" alt="Stay Happy">
+                    <p>Stay happy</p>
+                    <span>10 min</span>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="favorites-section">
-        <h2>Your favorites</h2>
-        <div class="search-icon"></div>
-        <div class="favorites-cards">
-            <div class="card">
-                <img src="path-to-train-your-mind-image.jpg" alt="Train your mind">
-                <p>Train your mind</p>
-                <span>Meditation • 10 min</span>
+        <section class="favorites-section">
+            <h2>Your favorites</h2>
+            <div class="search-icon"></div>
+            <div class="favorites-cards">
+                <div class="card">
+                    <img src="path-to-train-your-mind-image.jpg" alt="Train your mind">
+                    <p>Train your mind</p>
+                    <span>Meditation • 10 min</span>
+                </div>
+                <!-- Additional cards as needed -->
             </div>
-            <!-- Additional cards as needed -->
-        </div>
-    </section>
+        </section>
 
-    <nav class="bottom-nav">
-        <div class="nav-icon home"></div>
-        <div class="nav-icon sleep"></div>
-        <div class="nav-icon meditation"></div>
-        <div class="nav-icon music"></div>
-    </nav>
-</div>
-
+        <nav class="bottom-nav">
+            <div class="nav-icon home"></div>
+            <div class="nav-icon sleep"></div>
+            <div class="nav-icon meditation"></div>
+            <div class="nav-icon music"></div>
+        </nav>
+    </div>
+</body>
+</html>
