@@ -19,6 +19,7 @@
             max-width: 393px;
             margin: 0 auto;
             padding: 16px;
+            padding-bottom: 80px; /* Reduce this value since we removed the navbar */
         }
 
         /* Header */
@@ -75,33 +76,37 @@
         }
 
         /* Recently Played Section */
-        .recently-played-section {
+        .hadith-section,
+        .surah-section,
+        .stories-section {
             margin-top: 24px;
         }
 
-        .recently-played-section h2 {
+        .hadith-section h2,
+        .surah-section h2,
+        .stories-section h2 {
             font-size: 20px;
             margin-bottom: 12px;
         }
 
-        .recently-played-cards {
+        .scrollable-cards {
             display: flex;
             gap: 16px;
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            padding-bottom: 8px; /* Add some padding to show box-shadow */
+            padding-bottom: 8px;
         }
 
-        .recently-played-cards::-webkit-scrollbar {
+        .scrollable-cards::-webkit-scrollbar {
             display: none;
         }
 
-        .recently-played-cards .card {
-            flex: 0 0 auto; /* Prevent shrinking */
+        .scrollable-cards .card {
+            flex: 0 0 auto;
             width: 150px;
-            height: 200px; /* Set a fixed height */
+            height: 200px;
             background-color: #2a2e75;
             border-radius: 16px;
             padding: 12px;
@@ -111,22 +116,22 @@
             flex-direction: column;
         }
 
-        .recently-played-cards .card img {
+        .scrollable-cards .card img {
             width: 100%;
-            height: 100px; /* Set a fixed height for images */
+            height: 100px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 8px;
         }
 
-        .recently-played-cards .card p {
+        .scrollable-cards .card p {
             font-size: 16px;
             font-weight: bold;
             margin: 0 0 4px 0;
-            flex-grow: 1; /* Allow title to grow and push duration to bottom */
+            flex-grow: 1;
         }
 
-        .recently-played-cards .card span {
+        .scrollable-cards .card span {
             font-size: 14px;
             color: #a0a0a0;
             display: block;
@@ -186,38 +191,63 @@
         }
 
         /* Bottom Navigation */
-        .bottom-nav {
-            display: flex;
-            justify-content: space-around;
-            background-color: #2a2e75;
-            padding: 12px 0;
-            border-radius: 30px 30px 0 0;
+        /* Remove this section entirely */
+        /* <nav class="bottom-nav">
+            <div class="nav-icon home"></div>
+            <div class="nav-icon sleep"></div>
+            <div class="nav-icon meditation"></div>
+            <div class="nav-icon music"></div>
+        </nav> */
+
+        .ask-section {
             position: fixed;
-            bottom: 0;
+            bottom: 16px; /* Adjust this value as needed */
             left: 0;
-            width: 100%;
+            right: 0;
+            padding: 0 16px;
+            z-index: 10;
         }
 
-        .nav-icon {
+        .ask-card {
+            display: flex;
+            align-items: center;
+            background-color: #2a2e75;
+            border-radius: 20px;
+            padding: 12px 16px;
+            height: 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ask-card .emoji {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .ask-input {
+            flex-grow: 1;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            padding: 0;
+        }
+
+        .ask-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .ask-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 12px;
+        }
+
+        .ask-button svg {
             width: 24px;
             height: 24px;
-            background-size: cover;
-        }
-
-        .nav-icon.home {
-            background-image: url('assets/home.jpg');
-        }
-
-        .nav-icon.sleep {
-            background-image: url('assets/sleep.jpg');
-        }
-
-        .nav-icon.meditation {
-            background-image: url('assets/meditation.jpg');
-        }
-
-        .nav-icon.music {
-            background-image: url('assets/relax.jpg');
         }
     </style>
 </head>
@@ -233,63 +263,114 @@
             <h1>Jessica</h1>
         </section>
 
-        <section class="feeling-section">
-            <div class="feeling-card">
-                <span class="emoji">😊</span>
-                <p>How are you feeling?</p>
-            </div>
-        </section>
-
-        <section class="recently-played-section">
-            <h2>Recently played</h2>
-            <div class="recently-played-cards">
+        <!-- Хадисы Section (formerly Recently Played) -->
+        <section class="hadith-section">
+            <h2>Хадисы</h2>
+            <div class="scrollable-cards">
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="Daily Calm">
-                    <p>Daily Calm</p>
-                    <span>10 min</span>
+                    <img src="assets/relax.jpg" alt="Хадис 1">
+                    <p>Хадис о доброте</p>
+                    <span>10 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/meditating.jpg" alt="Stay Happy">
-                    <p>Stay Happy</p>
-                    <span>10 min</span>
+                    <img src="assets/meditating.jpg" alt="Хадис 2">
+                    <p>Хадис о знаниях</p>
+                    <span>8 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Peaceful Sleep">
-                    <p>Peaceful Sleep</p>
-                    <span>15 min</span>
+                    <img src="assets/sleep.jpg" alt="Хадис 3">
+                    <p>Хадис о терпении</p>
+                    <span>12 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="Mindful Moments">
-                    <p>Mindful Moments</p>
-                    <span>8 min</span>
+                    <img src="assets/relax.jpg" alt="Хадис 4">
+                    <p>Хадис о семье</p>
+                    <span>15 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Stress Relief">
-                    <p>Stress Relief</p>
-                    <span>12 min</span>
+                    <img src="assets/sleep.jpg" alt="Хадис 5">
+                    <p>Хадис о честности</p>
+                    <span>9 мин</span>
                 </div>
             </div>
         </section>
 
-        <section class="favorites-section">
-            <h2>Your favorites</h2>
+        <!-- Суры Section (formerly Favorites) -->
+        <section class="surah-section">
+            <h2>Суры</h2>
             <div class="search-icon"></div>
-            <div class="favorites-cards">
+            <div class="scrollable-cards">
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Train your mind">
-                    <p>Train your mind</p>
-                    <span>Meditation • 10 min</span>
+                    <img src="assets/sleep.jpg" alt="Сура 1">
+                    <p>Аль-Фатиха</p>
+                    <span>Сура • 5 мин</span>
                 </div>
-                <!-- Additional cards as needed -->
+                <div class="card">
+                    <img src="assets/relax.jpg" alt="Сура 2">
+                    <p>Аль-Бакара</p>
+                    <span>Сура • 20 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/meditating.jpg" alt="Сура 3">
+                    <p>Ясин</p>
+                    <span>Сура • 15 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/sleep.jpg" alt="Сура 4">
+                    <p>Аль-Кахф</p>
+                    <span>Сура • 18 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/relax.jpg" alt="Сура 5">
+                    <p>Ар-Рахман</p>
+                    <span>Сура • 12 мин</span>
+                </div>
             </div>
         </section>
 
-        <nav class="bottom-nav">
-            <div class="nav-icon home"></div>
-            <div class="nav-icon sleep"></div>
-            <div class="nav-icon meditation"></div>
-            <div class="nav-icon music"></div>
-        </nav>
+        <!-- New Истории Section -->
+        <section class="stories-section">
+            <h2>Истории</h2>
+            <div class="scrollable-cards">
+                <div class="card">
+                    <img src="assets/relax.jpg" alt="История 1">
+                    <p>Пророк Мухаммад</p>
+                    <span>20 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/meditating.jpg" alt="История 2">
+                    <p>Пророк Ибрахим</p>
+                    <span>15 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/sleep.jpg" alt="История 3">
+                    <p>Пророк Юсуф</p>
+                    <span>18 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/relax.jpg" alt="История 4">
+                    <p>Пророк Муса</p>
+                    <span>22 мин</span>
+                </div>
+                <div class="card">
+                    <img src="assets/sleep.jpg" alt="История 5">
+                    <p>Пророк Иса</p>
+                    <span>17 мин</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="ask-section">
+            <div class="ask-card">
+                <span class="emoji">🕌</span>
+                <input type="text" placeholder="Спросите про ислам" class="ask-input">
+                <button class="ask-button">
+                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
     </div>
 </body>
 </html>
