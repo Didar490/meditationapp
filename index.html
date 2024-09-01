@@ -10,16 +10,16 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            background-color: #0c0b43;
-            color: white;
+            background-color: #0A0A1E; /* Background color */
+            color: #B3B3FF; /* Text color */
         }
 
         /* Container */
         .container {
             max-width: 393px;
             margin: 0 auto;
-            padding: 16px;
-            padding-bottom: 80px; /* Reduce this value since we removed the navbar */
+            padding: 20px 16px; /* Increased top and bottom padding */
+            padding-bottom: 100px; /* Increased to account for the fixed ask-section */
         }
 
         /* Header */
@@ -44,13 +44,14 @@
             background-size: cover;
         }
 
-        /* Greeting Section */
+        /* Prayer Times Section */
         .prayer-times {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 24px; /* Increased from 20px */
+            margin-bottom: 24px; /* Added margin-bottom */
             padding: 10px;
-            background-color: #2a2e75;
+            background-color: #141432; /* Component color */
             border-radius: 15px;
         }
 
@@ -63,55 +64,52 @@
 
         .prayer-name {
             font-size: 12px;
-            color: #a0a0a0;
+            color: #FFFFFF; /* White text color for component names */
             margin-bottom: 4px;
         }
 
         .prayer-hour {
             font-size: 14px;
             font-weight: bold;
+            color: #B3B3FF; /* Text color */
         }
 
-        /* Feeling Section */
-        .feeling-section {
-            margin-top: 20px;
-        }
-
-        .feeling-card {
+        /* Section Headers */
+        .section-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            background-color: #2a2e75;
-            border-radius: 20px;
-            padding: 16px;
+            margin-bottom: 16px; /* Increased from 12px */
         }
 
-        .feeling-card .emoji {
-            font-size: 24px;
-            margin-right: 12px;
-        }
-
-        /* Recently Played Section */
-        .hadith-section,
-        .surah-section,
-        .stories-section {
-            margin-top: 24px;
-        }
-
-        .hadith-section h2,
-        .surah-section h2,
-        .stories-section h2 {
+        .section-header h2 {
             font-size: 20px;
-            margin-bottom: 12px;
+            margin: 0;
+            color: #B3B3FF; /* Text color */
         }
 
+        .view-all {
+            background: none;
+            border: none;
+            color: #B3B3FF; /* Text color */
+            font-size: 14px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Scrollable Cards */
         .scrollable-cards {
             display: flex;
-            gap: 16px;
+            gap: 20px; /* Increased from 16px */
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            padding-bottom: 8px;
+            padding-bottom: 12px; /* Increased from 8px */
         }
 
         .scrollable-cards::-webkit-scrollbar {
@@ -122,7 +120,7 @@
             flex: 0 0 auto;
             width: 150px;
             height: 200px;
-            background-color: #2a2e75;
+            background-color: #141432; /* Component color */
             border-radius: 16px;
             padding: 12px;
             text-align: left;
@@ -144,70 +142,24 @@
             font-weight: bold;
             margin: 0 0 4px 0;
             flex-grow: 1;
+            color: #FFFFFF; /* White text color for component names */
         }
 
         .scrollable-cards .card span {
             font-size: 14px;
-            color: #a0a0a0;
+            color: #B3B3FF; /* Text color */
             display: block;
         }
 
-        /* Favorites Section */
-        .favorites-section {
-            margin-top: 24px;
+        /* Add this new style for additional space between cards and the next section */
+        .scrollable-cards + .section-header {
+            margin-top: 28px;
         }
 
-        .favorites-section h2 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .search-icon {
-            width: 24px;
-            height: 24px;
-            background-image: url('path-to-search-icon.svg');
-            background-size: cover;
-            float: right;
-        }
-
-        .favorites-cards {
-            display: flex;
-            gap: 16px;
-            overflow-x: scroll;
-        }
-
-        .favorites-cards .card {
-            width: 150px;
-            background-color: #2a2e75;
-            border-radius: 16px;
-            padding: 12px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .favorites-cards .card img {
-            width: 100%;
-            height: 100px; /* Set a fixed height */
-            object-fit: cover; /* This will ensure the image covers the area without stretching */
-            border-radius: 10px;
-            margin-bottom: 8px;
-        }
-
-        .favorites-cards .card p {
-            font-size: 16px;
-            margin: 8px 0 4px 0;
-        }
-
-        .favorites-cards .card span {
-            font-size: 12px;
-            color: #a0a0a0;
-        }
-
+        /* Ask Section */
         .ask-section {
             position: fixed;
-            bottom: 16px; /* Adjust this value as needed */
+            bottom: 20px; /* Increased from 16px */
             left: 0;
             right: 0;
             padding: 0 16px;
@@ -217,7 +169,7 @@
         .ask-card {
             display: flex;
             align-items: center;
-            background-color: #2a2e75;
+            background-color: #141432; /* Component color */
             border-radius: 20px;
             padding: 12px 16px;
             height: 60px;
@@ -233,14 +185,15 @@
             flex-grow: 1;
             background: none;
             border: none;
-            color: white;
+            color: #B3B3FF; /* Text color */
             font-size: 16px;
             outline: none;
             padding: 0;
         }
 
         .ask-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: #B3B3FF; /* Text color with reduced opacity */
+            opacity: 0.6;
         }
 
         .ask-button {
@@ -254,6 +207,10 @@
         .ask-button svg {
             width: 24px;
             height: 24px;
+        }
+
+        .ask-button svg path {
+            stroke: #B3B3FF; /* Text color for the button icon */
         }
     </style>
 </head>
@@ -287,32 +244,35 @@
             </div>
         </section>
 
-        <!-- Хадисы Section (formerly Recently Played) -->
+        <!-- Хадисы Section -->
         <section class="hadith-section">
-            <h2>Хадисы</h2>
+            <div class="section-header">
+                <h2>Хадисы</h2>
+                <button class="view-all">по��мотреть все</button>
+            </div>
             <div class="scrollable-cards">
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="Хадис 1">
+                    <img src="assets/kindness-in-islam.jpg" alt="Хадис 1">
                     <p>Хадис о доброте</p>
                     <span>10 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/meditating.jpg" alt="Хадис 2">
+                    <img src="assets/kindness-in-islam.jpg" alt="Хадис 2">
                     <p>Хадис о знаниях</p>
                     <span>8 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Хадис 3">
+                    <img src="assets/kindness-in-islam.jpg" alt="Хадис 3">
                     <p>Хадис о терпении</p>
                     <span>12 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="Хадис 4">
+                    <img src="assets/kindness-in-islam.jpg" alt="Хадис 4">
                     <p>Хадис о семье</p>
                     <span>15 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Хадис 5">
+                    <img src="assets/kindness-in-islam.jpg" alt="Хадис 5">
                     <p>Хадис о честности</p>
                     <span>9 мин</span>
                 </div>
@@ -321,31 +281,34 @@
 
         <!-- Суры Section (formerly Favorites) -->
         <section class="surah-section">
-            <h2>Суры</h2>
+            <div class="section-header">
+                <h2>Суры</h2>
+                <button class="view-all">посмотреть все</button>
+            </div>
             <div class="search-icon"></div>
             <div class="scrollable-cards">
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Сура 1">
+                    <img src="assets/kindness-in-islam.jpg" alt="Сура 1">
                     <p>Аль-Фатиха</p>
                     <span>Сура • 5 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="Сура 2">
+                    <img src="assets/kindness-in-islam.jpg" alt="Сура 2">
                     <p>Аль-Бакара</p>
                     <span>Сура • 20 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/meditating.jpg" alt="Сура 3">
+                    <img src="assets/kindness-in-islam.jpg" alt="Сура 3">
                     <p>Ясин</p>
                     <span>Сура • 15 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="Сура 4">
+                    <img src="assets/kindness-in-islam.jpg" alt="Сура 4">
                     <p>Аль-Кахф</p>
                     <span>Сура • 18 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="Сура 5">
+                    <img src="assets/kindness-in-islam.jpg" alt="Сура 5">
                     <p>Ар-Рахман</p>
                     <span>Сура • 12 мин</span>
                 </div>
@@ -354,30 +317,33 @@
 
         <!-- New Истории Section -->
         <section class="stories-section">
-            <h2>Истории</h2>
+            <div class="section-header">
+                <h2>Истории</h2>
+                <button class="view-all">посмотреть все</button>
+            </div>
             <div class="scrollable-cards">
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="История 1">
+                    <img src="assets/kindness-in-islam.jpg" alt="История 1">
                     <p>Пророк Мухаммад</p>
                     <span>20 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/meditating.jpg" alt="История 2">
+                    <img src="assets/kindness-in-islam.jpg" alt="История 2">
                     <p>Пророк Ибрахим</p>
                     <span>15 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="История 3">
+                    <img src="assets/kindness-in-islam.jpg" alt="История 3">
                     <p>Пророк Юсуф</p>
                     <span>18 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/relax.jpg" alt="История 4">
+                    <img src="assets/kindness-in-islam.jpg" alt="История 4">
                     <p>Пророк Муса</p>
                     <span>22 мин</span>
                 </div>
                 <div class="card">
-                    <img src="assets/sleep.jpg" alt="История 5">
+                    <img src="assets/kindness-in-islam.jpg" alt="История 5">
                     <p>Пророк Иса</p>
                     <span>17 мин</span>
                 </div>
