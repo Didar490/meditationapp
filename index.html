@@ -213,6 +213,39 @@
         .ask-button svg path {
             stroke: #B3B3FF; /* Text color for the button icon */
         }
+
+        /* Styles for Hadith list items */
+        .hadith {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            background-color: #141432; /* Component color */
+            border-radius: 10px;
+            color: #FFFFFF; /* Text color */
+        }
+
+        /* Styles for the Hadith detail page */
+        #hadith-detail {
+            padding: 20px;
+            background-color: #141432; /* Component color */
+            border-radius: 10px;
+            color: #FFFFFF; /* Text color */
+            margin: 20px;
+        }
+
+        #hadith-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #hadith-subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #hadith-content {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -252,27 +285,27 @@
                 <button class="view-all">посмотреть все</button>
             </div>
             <div class="scrollable-cards">
-                <div class="card">
+                <div class="card hadith" data-id="1">
                     <img src="assets/kindness-in-islam.jpg" alt="Хадис о доброте">
                     <p>Хадис о доброте</p>
                     <span>10 мин</span>
                 </div>
-                <div class="card">
+                <div class="card hadith" data-id="2">
                     <img src="assets/knowledge-in-islam.jpg" alt="Хадис о знаниях">
                     <p>Хадис о знаниях</p>
                     <span>8 мин</span>
                 </div>
-                <div class="card">
+                <div class="card hadith" data-id="3">
                     <img src="assets/patience-in-islam.jpg" alt="Хадис о терпении">
                     <p>Хадис о терпении</p>
                     <span>12 мин</span>
                 </div>
-                <div class="card">
+                <div class="card hadith" data-id="4">
                     <img src="assets/family-in-islam.jpg" alt="Хадис о семье">
                     <p>Хадис о семье</p>
                     <span>15 мин</span>
                 </div>
-                <div class="card">
+                <div class="card hadith" data-id="5">
                     <img src="assets/truthful-in-islam.jpg" alt="Хадис о честности">
                     <p>Хадис о честности</p>
                     <span>9 мин</span>
@@ -362,5 +395,6 @@
             </div>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
